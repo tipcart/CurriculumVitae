@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="shadow_app_bar">4dp</dimen>
+    <dimen name="logo_wide_width">15dp</dimen>
+    <dimen name="logo_wide_height">30dp</dimen>
+</resources>

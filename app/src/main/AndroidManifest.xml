@@ -1,0 +1,32 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wywrot.ewa.curriculumvitae">
+
+    <application
+        android:name="com.wywrot.ewa.curriculumvitae.CurriculumVitaeApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
+
+        <!--landscape orientation will be enabled in further stages of development-->
+        <activity
+            android:name="com.wywrot.ewa.curriculumvitae.activity.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.SplashScreen"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--landscape orientation will be enabled in further stages of development-->
+        <activity
+            android:name="com.wywrot.ewa.curriculumvitae.activity.MainActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+    </application>
+</manifest>

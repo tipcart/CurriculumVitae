@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3e5c76</color>
+    <color name="colorPrimaryDark">#1d2d44</color>
+    <color name="colorAccent">#f0ebd8</color>
+
+    <color name="windowBackground">@color/white</color>
+    <color name="cardBackground">@color/grey_100</color>
+
+    <color name="textColorPrimary">@color/grey_900</color>
+    <color name="textColorSecondary">@color/black</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="grey_100">#FCFCFC</color>
+    <color name="grey_200">#C5C5C5</color>
+    <color name="grey_300">#8F8F8F</color>
+    <color name="grey_500">#5E5E5E</color>
+    <color name="grey_900">#272727</color>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item>
+        <shape>
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_resume_icon_primary_dark_64_96"
+        android:gravity="center"
+        tools:ignore="UnusedAttribute" />
+</layer-list>
