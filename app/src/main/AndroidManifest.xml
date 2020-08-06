@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wywrot.ewa.curriculumvitae">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.wywrot.ewa.curriculumvitae.CurriculumVitaeApplication"
         android:icon="@mipmap/ic_launcher"

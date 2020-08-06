@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.wywrot.ewa.curriculumvitae.R
 import com.wywrot.ewa.curriculumvitae.activity.MainActivity
+import com.wywrot.ewa.curriculumvitae.viewmodel.Injector
+import com.wywrot.ewa.curriculumvitae.viewmodel.ProfileViewModel
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment() {
@@ -14,6 +17,10 @@ class ProfileFragment : Fragment() {
     companion object {
         fun newInstance() = ProfileFragment()
             .apply { retainInstance = true }
+    }
+
+    private val viewModel: ProfileViewModel by viewModels {
+        Injector.provideProfileViewModelFactory(requireContext())
     }
 
     override fun onCreateView(
@@ -26,6 +33,12 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         bind()
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.fetchRecentDataFromRest()
+
+        swipeContainer.setOnRefreshListener {
+            viewModel.fetchRecentDataFromRest()
+        }
     }
 
     private fun bind() {
