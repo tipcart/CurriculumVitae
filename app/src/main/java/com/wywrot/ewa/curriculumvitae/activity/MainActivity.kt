@@ -2,17 +2,20 @@ package com.wywrot.ewa.curriculumvitae.activity
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.annotation.StringRes
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.navigation.NavigationView
 import com.wywrot.ewa.curriculumvitae.R
+import com.wywrot.ewa.curriculumvitae.adapter.getContext
 import com.wywrot.ewa.curriculumvitae.fragment.AboutMeFragment
 import com.wywrot.ewa.curriculumvitae.fragment.MyArticlesFragment
 import com.wywrot.ewa.curriculumvitae.fragment.MyExperienceFragment
@@ -49,8 +52,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .circleCrop()
                 .into(drawerProfilePhoto)
 
-            //todo get name from json
-            drawerProfileName.text = "Ewa Wywrot"
+            drawerProfileName.text = resources.getString(R.string.my_name)
         }
     }
 
@@ -68,6 +70,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.about_me -> changeFragment(AboutMeFragment.newInstance())
             R.id.experience -> changeFragment(MyExperienceFragment.newInstance())
             R.id.articles -> changeFragment(MyArticlesFragment.newInstance())
+            R.id.linkedin -> {
+                try {
+                    val linkedInLink = "https://www.linkedin.com/in/ewa-wywrot-078638124/"
+                    val i = Intent(Intent.ACTION_VIEW)
+                    i.data = Uri.parse(linkedInLink)
+                    ContextCompat.startActivity(this, i, null)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

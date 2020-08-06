@@ -14,5 +14,10 @@
             android:id="@+id/articles"
             android:icon="@drawable/ic_baseline_library_books_white_24"
             android:title="@string/my_articles" />
+
+        <item
+            android:id="@+id/linkedin"
+            android:icon="@drawable/ic_linkedin_white_24"
+            android:title="@string/my_linkedin_profile" />
     </group>
 </menu>

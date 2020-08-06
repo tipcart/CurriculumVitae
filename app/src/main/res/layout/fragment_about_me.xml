@@ -32,35 +32,37 @@
                 <TextView
                     android:id="@+id/name"
                     style="@style/StandardText.Title.Bold.AllCaps"
-                    android:layout_width="match_parent"
-                    android:gravity="center_horizontal"
+                    android:textColor="@color/blue_light"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
                     android:paddingTop="@dimen/padding_vertical_element"
                     tools:text="ewa wywrot" />
 
                 <TextView
                     android:id="@+id/jobTitle"
                     style="@style/StandardText.SubTitle"
-                    android:layout_width="match_parent"
+                    android:drawableEnd="@drawable/ic_android_debug_bridge_green_24"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
+                    android:layout_gravity="center"
                     android:paddingTop="@dimen/padding_vertical_element"
                     tools:text="Android Developer" />
 
                 <TextView
                     android:id="@+id/phone"
                     style="@style/StandardText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
+                    android:layout_gravity="center"
                     android:paddingTop="@dimen/padding_vertical_element"
                     tools:text="phone: +48123456789" />
 
                 <TextView
                     android:id="@+id/email"
                     style="@style/StandardText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
+                    android:layout_gravity="center"
                     android:paddingTop="@dimen/padding_vertical_element"
                     android:paddingBottom="@dimen/padding_vertical_element"
                     tools:text="e-mail: xxx.xxx@xx.xxx" />
@@ -69,7 +71,7 @@
                     style="@style/StandardText.SubTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/padding_vertical_element"
+                    android:paddingTop="@dimen/space_between_categories"
                     android:text="@string/summary" />
 
                 <TextView
