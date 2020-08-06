@@ -3,4 +3,8 @@
     <dimen name="shadow_app_bar">4dp</dimen>
     <dimen name="logo_wide_width">15dp</dimen>
     <dimen name="logo_wide_height">30dp</dimen>
+    <dimen name="margin_vertical_fragment">16dp</dimen>
+    <dimen name="margin_horizontal_fragment">16dp</dimen>
+
+    <dimen name="padding_vertical_element">8dp</dimen>
 </resources>

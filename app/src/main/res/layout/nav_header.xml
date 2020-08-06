@@ -10,7 +10,7 @@
     tools:ignore="Overdraw">
 
     <ImageView
-        android:id="@+id/drawerUserPicture"
+        android:id="@+id/drawerProfilePhoto"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginBottom="16dp"
@@ -18,7 +18,7 @@
         tools:src="@drawable/profile_photo" />
 
     <TextView
-        android:id="@+id/drawerUserName"
+        android:id="@+id/drawerProfileName"
         style="@style/StandardText.Title"
         tools:text="Name Surname" />
 </LinearLayout>

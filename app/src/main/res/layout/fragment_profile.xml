@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycler_parent_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/contentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_horizontal_fragment"
+                android:layout_marginTop="@dimen/margin_vertical_fragment"
+                android:layout_marginRight="@dimen/margin_horizontal_fragment"
+                android:layout_marginBottom="@dimen/margin_vertical_fragment"
+                android:orientation="vertical"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/StandardText.Title.Bold.AllCaps"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="@dimen/padding_vertical_element"
+                    tools:text="ewa wywrot" />
+
+                <TextView
+                    android:id="@+id/jobTitle"
+                    style="@style/StandardText.SubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="@dimen/padding_vertical_element"
+                    tools:text="Android Developer" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    style="@style/StandardText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="@dimen/padding_vertical_element"
+                    tools:text="phone: +48123456789" />
+
+                <TextView
+                    android:id="@+id/email"
+                    style="@style/StandardText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="@dimen/padding_vertical_element"
+                    android:paddingBottom="@dimen/padding_vertical_element"
+                    tools:text="e-mail: xxx.xxx@xx.xxx" />
+
+                <TextView
+                    style="@style/StandardText.SubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_vertical_element"
+                    android:text="@string/summary" />
+
+                <TextView
+                    android:id="@+id/summaryContent"
+                    style="@style/StandardText.Content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_vertical_element"
+                    tools:text="@string/lorem_ipsum" />
+            </LinearLayout>
+
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/emptyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableTop="@drawable/ic_error_outline_primary_dark_24"
+        android:gravity="center"
+        android:text="@string/empty_view_message"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:indeterminate="true"
+        android:minHeight="0dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:scaleY="4"
+        android:visibility="gone"
+        tools:visibility="visible" />
+</FrameLayout>
