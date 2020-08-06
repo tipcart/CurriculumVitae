@@ -3,10 +3,10 @@ package com.wywrot.ewa.curriculumvitae.viewmodel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.NewInstanceFactory
-import com.wywrot.ewa.curriculumvitae.repository.ProfileRepository
+import com.wywrot.ewa.curriculumvitae.repository.BaseInfoRepository
 
 interface ViewModelFactoryProvider {
-    fun provideProfileViewModelFactory(context: Context): NewInstanceFactory
+    fun provideAboutMeViewModelFactory(context: Context): NewInstanceFactory
 }
 
 internal val Injector: ViewModelFactoryProvider
@@ -15,15 +15,15 @@ internal val Injector: ViewModelFactoryProvider
 @Suppress("UNCHECKED_CAST")
 private object DefaultViewModelProvider : ViewModelFactoryProvider {
 
-    private fun getProfileRepository(context: Context) =
-        ProfileRepository.getInstance(context)
+    private fun getBaseInfoRepository(context: Context) =
+        BaseInfoRepository.getInstance(context)
 
 
-    override fun provideProfileViewModelFactory(context: Context) =
+    override fun provideAboutMeViewModelFactory(context: Context) =
         object : NewInstanceFactory() {
             override fun <T : ViewModel> create(modelClass: Class<T>) =
-                ProfileViewModel(
-                    getProfileRepository(context)
+                AboutMeViewModel(
+                    getBaseInfoRepository(context)
                 ) as T
         }
 }

@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.navigation.NavigationView
 import com.wywrot.ewa.curriculumvitae.R
-import com.wywrot.ewa.curriculumvitae.fragment.ProfileFragment
+import com.wywrot.ewa.curriculumvitae.fragment.AboutMeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header.view.*
 
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        changeFragment(ProfileFragment.newInstance())
+        changeFragment(AboutMeFragment.newInstance())
         bindNavDrawer()
     }
 
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.profile -> changeFragment(ProfileFragment.newInstance())
+            R.id.about_me -> changeFragment(AboutMeFragment.newInstance())
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

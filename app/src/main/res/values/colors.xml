@@ -9,6 +9,7 @@
 
     <color name="textColorPrimary">@color/grey_900</color>
     <color name="textColorSecondary">@color/black</color>
+    <color name="textColorTertiary">@color/grey_500</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
