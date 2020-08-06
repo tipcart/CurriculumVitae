@@ -4,5 +4,10 @@
             android:id="@+id/about_me"
             android:icon="@drawable/ic_baseline_account_circle_white_24"
             android:title="@string/about_me" />
+
+        <item
+            android:id="@+id/experience"
+            android:icon="@drawable/ic_account_star_white_24"
+            android:title="@string/experience" />
     </group>
 </menu>

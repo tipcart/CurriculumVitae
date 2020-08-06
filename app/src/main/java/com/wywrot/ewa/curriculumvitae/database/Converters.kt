@@ -6,6 +6,13 @@ import com.google.gson.reflect.TypeToken
 
 internal class Converters {
     @TypeConverter
+    fun fromString(value: String): List<String> =
+        Gson().fromJson(value, object : TypeToken<List<String>>() {}.type)
+
+    @TypeConverter
+    fun fromStringList(list: List<String>): String = Gson().toJson(list)
+
+    @TypeConverter
     fun fromIntegerList(integers: List<Int?>?): String? =
         if (integers == null) null
         else Gson().toJson(integers, object : TypeToken<List<Int?>?>() {}.type)

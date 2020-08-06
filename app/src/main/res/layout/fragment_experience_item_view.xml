@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_horizontal_fragment"
+    android:layout_marginTop="@dimen/margin_vertical_fragment"
+    android:layout_marginRight="@dimen/margin_horizontal_fragment"
+    android:layout_marginBottom="@dimen/margin_vertical_fragment"
+    android:elevation="@dimen/cardview_elevation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/companyIcon"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_width"
+            android:layout_marginLeft="@dimen/padding_horizontal_element"
+            android:layout_marginRight="@dimen/padding_horizontal_element"
+            android:contentDescription="@string/company_icon"
+            tools:src="@drawable/ic_baseline_work_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/companyName"
+            style="@style/StandardText.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_vertical_fragment"
+            android:paddingLeft="@dimen/padding_horizontal_element"
+            android:paddingRight="@dimen/padding_horizontal_element"
+            app:layout_constraintLeft_toRightOf="@+id/companyIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Forward Thinking Systems Poland" />
+
+        <TextView
+            android:id="@+id/jobTitle"
+            style="@style/StandardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding_horizontal_element"
+            android:paddingRight="@dimen/padding_horizontal_element"
+            app:layout_constraintLeft_toRightOf="@+id/companyIcon"
+            app:layout_constraintTop_toBottomOf="@+id/companyName"
+            tools:text="Android Developer Intern" />
+
+        <TextView
+            android:id="@+id/startTime"
+            style="@style/StandardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding_horizontal_element"
+            android:paddingRight="@dimen/padding_horizontal_element"
+            app:layout_constraintLeft_toRightOf="@+id/companyIcon"
+            app:layout_constraintTop_toBottomOf="@+id/jobTitle"
+            tools:text="from: 2016.08" />
+
+        <TextView
+            android:id="@+id/endTime"
+            style="@style/StandardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/startTime"
+            app:layout_constraintTop_toBottomOf="@+id/jobTitle"
+            tools:text="to: 2017.02" />
+
+        <TextView
+            android:id="@+id/developedAppsLabel"
+            style="@style/StandardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_between_elements"
+            android:paddingLeft="@dimen/padding_horizontal_element"
+            android:paddingRight="@dimen/padding_horizontal_element"
+            android:text="@string/developedApps"
+            app:layout_constraintLeft_toRightOf="@+id/companyIcon"
+            app:layout_constraintTop_toBottomOf="@+id/startTime" />
+
+        <TextView
+            android:id="@+id/developedApps"
+            style="@style/StandardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_between_elements"
+            android:paddingLeft="@dimen/padding_horizontal_element"
+            android:paddingRight="@dimen/padding_horizontal_element"
+            app:layout_constraintLeft_toRightOf="@+id/companyIcon"
+            app:layout_constraintTop_toBottomOf="@+id/developedAppsLabel"
+            tools:text="app1, app2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+

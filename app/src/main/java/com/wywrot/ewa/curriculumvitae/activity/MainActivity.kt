@@ -14,6 +14,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.navigation.NavigationView
 import com.wywrot.ewa.curriculumvitae.R
 import com.wywrot.ewa.curriculumvitae.fragment.AboutMeFragment
+import com.wywrot.ewa.curriculumvitae.fragment.MyExperienceFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header.view.*
 
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.about_me -> changeFragment(AboutMeFragment.newInstance())
+            R.id.experience -> changeFragment(MyExperienceFragment.newInstance())
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
@@ -80,7 +82,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
 
                 supportFragmentManager.backStackEntryCount > 1 -> {
-                    val tag = supportFragmentManager.getBackStackEntryAt(
+                    supportFragmentManager.getBackStackEntryAt(
                         supportFragmentManager.backStackEntryCount - 2
                     ).name
                     supportFragmentManager.popBackStack()

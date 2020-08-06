@@ -50,6 +50,10 @@
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
+    <style name="StandardText.Bold" parent="StandardText">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="StandardText.Title" parent="StandardText">
         <item name="android:textSize">20sp</item>
     </style>

@@ -7,4 +7,8 @@
     <dimen name="margin_horizontal_fragment">16dp</dimen>
 
     <dimen name="padding_vertical_element">8dp</dimen>
+    <dimen name="padding_horizontal_element">16dp</dimen>
+    <dimen name="icon_width">48dp</dimen>
+    <dimen name="space_between_elements">8dp</dimen>
+    <dimen name="cardview_elevation">2dp</dimen>
 </resources>
