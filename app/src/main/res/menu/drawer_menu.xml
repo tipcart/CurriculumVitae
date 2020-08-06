@@ -9,5 +9,10 @@
             android:id="@+id/experience"
             android:icon="@drawable/ic_account_star_white_24"
             android:title="@string/experience" />
+
+        <item
+            android:id="@+id/articles"
+            android:icon="@drawable/ic_baseline_library_books_white_24"
+            android:title="@string/my_articles" />
     </group>
 </menu>

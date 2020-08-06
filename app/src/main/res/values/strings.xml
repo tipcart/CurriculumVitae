@@ -12,5 +12,6 @@
     <string name="developedApps">Developed applications:</string>
     <string name="start_date">From: %1$s</string>
     <string name="end_date">to: %1$s</string>
-
+    <string name="present">present</string>
+    <string name="my_articles">My articles</string>
 </resources>

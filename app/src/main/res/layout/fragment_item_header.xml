@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/StandardText.Title.Bold.AllCaps"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/StandardText.Title"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/margin_horizontal_fragment"
+    tools:text="Title"
     android:layout_marginTop="@dimen/padding_vertical_element"
     android:layout_marginRight="@dimen/margin_horizontal_fragment"
     android:layout_marginBottom="@dimen/padding_vertical_element" />

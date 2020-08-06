@@ -14,6 +14,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.navigation.NavigationView
 import com.wywrot.ewa.curriculumvitae.R
 import com.wywrot.ewa.curriculumvitae.fragment.AboutMeFragment
+import com.wywrot.ewa.curriculumvitae.fragment.MyArticlesFragment
 import com.wywrot.ewa.curriculumvitae.fragment.MyExperienceFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header.view.*
@@ -66,6 +67,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.about_me -> changeFragment(AboutMeFragment.newInstance())
             R.id.experience -> changeFragment(MyExperienceFragment.newInstance())
+            R.id.articles -> changeFragment(MyArticlesFragment.newInstance())
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
@@ -98,11 +100,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     fun setActionBarTitle(@StringRes title: Int) {
         toolbar.setTitle(title)
-        setTitle(title)
-    }
-
-    fun setActionBarTitle(title: String?) {
-        toolbar.title = title
         setTitle(title)
     }
 }

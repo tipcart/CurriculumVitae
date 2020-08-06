@@ -1,5 +1,6 @@
 package com.wywrot.ewa.curriculumvitae.adapter
 
+import android.content.Context
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.IntDef
@@ -17,9 +18,7 @@ open class ExperienceAdapter : RecyclerView.Adapter<AbstractViewHolder>() {
     private val items: ArrayList<AdapterItem> = ArrayList()
     private lateinit var cachedExperience: List<Experience>
 
-    override fun onBindViewHolder(holder: AbstractViewHolder, position: Int) =
-        holder.bind()
-
+    override fun onBindViewHolder(holder: AbstractViewHolder, position: Int) = holder.bind()
     override fun getItemCount(): Int = items.size
     override fun getItemViewType(position: Int): Int = items[position].adapterItemType
 
@@ -39,13 +38,12 @@ open class ExperienceAdapter : RecyclerView.Adapter<AbstractViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AbstractViewHolder {
         return when (viewType) {
-            HEADER -> HeaderHolder(parent, R.layout.fragment_experience_header)
+            HEADER -> HeaderHolder(parent, R.layout.fragment_item_header)
             else -> ExperienceHolder(parent, R.layout.fragment_experience_item_view)
         }
     }
 
-    @Suppress("UNCHECKED_CAST")
-    open fun regenerateAdapterItems() {
+    private fun regenerateAdapterItems() {
         items.clear()
         items.add(AdapterItem(HEADER))
 
@@ -74,7 +72,9 @@ open class ExperienceAdapter : RecyclerView.Adapter<AbstractViewHolder>() {
                 itemView.companyName.text = companyName
                 itemView.jobTitle.text = jobTitle
                 itemView.startTime.setText(R.string.start_date, dateFormat.format(startTimestamp))
-                itemView.endTime.setText(R.string.end_date, dateFormat.format(endTimestamp))
+                itemView.endTime.setText(
+                    R.string.end_date, getFormattedEndDate(getContext(), endTimestamp)
+                )
                 itemView.developedApps.text = getFormattedList(developedApps)
                 Glide
                     .with(itemView)
@@ -85,10 +85,14 @@ open class ExperienceAdapter : RecyclerView.Adapter<AbstractViewHolder>() {
         }
     }
 
-    private fun getFormattedList(list: List<String>?) :String{
-        var formattedList  = ""
-        list?.forEach{
-            formattedList += it +"\n"
+    private fun getFormattedEndDate(context: Context, endTimestamp: Long?): String =
+        if (endTimestamp != null && endTimestamp > 0) dateFormat.format(endTimestamp)
+        else context.resources.getString(R.string.present)
+
+    private fun getFormattedList(list: List<String>?): String {
+        var formattedList = ""
+        list?.forEach {
+            formattedList += it + "\n"
         }
 
         return formattedList

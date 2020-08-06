@@ -10,29 +10,29 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wywrot.ewa.curriculumvitae.R
 import com.wywrot.ewa.curriculumvitae.activity.MainActivity
-import com.wywrot.ewa.curriculumvitae.adapter.ExperienceAdapter
+import com.wywrot.ewa.curriculumvitae.adapter.ArticlesAdapter
+import com.wywrot.ewa.curriculumvitae.viewmodel.ArticlesViewModel
 import com.wywrot.ewa.curriculumvitae.viewmodel.Injector
-import com.wywrot.ewa.curriculumvitae.viewmodel.MyExperienceViewModel
 import kotlinx.android.synthetic.main.fragment_recycler_view_swipe_and_empty_view.*
 
-class MyExperienceFragment : Fragment() {
-    private lateinit var adapter: ExperienceAdapter
+class MyArticlesFragment : Fragment() {
+    private lateinit var adapter: ArticlesAdapter
 
     companion object {
-        fun newInstance() = MyExperienceFragment()
+        fun newInstance() = MyArticlesFragment()
             .apply { retainInstance = true }
     }
 
     private var receivedResponse: Int = 0
 
-    private val viewModel: MyExperienceViewModel by viewModels {
-        Injector.provideExperienceViewModelFactory(requireContext())
+    private val viewModel: ArticlesViewModel by viewModels {
+        Injector.provideArticleViewModelFactory(requireContext())
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        (activity as MainActivity).setActionBarTitle(R.string.experience)
+        (activity as MainActivity).setActionBarTitle(R.string.my_articles)
         return inflater.inflate(
             R.layout.fragment_recycler_view_swipe_and_empty_view,
             container,
@@ -44,7 +44,7 @@ class MyExperienceFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView.layoutManager = LinearLayoutManager(context)
-        adapter = ExperienceAdapter()
+        adapter = ArticlesAdapter()
         recyclerView.adapter = adapter
 
         swipeContainer.setOnRefreshListener {
@@ -56,8 +56,8 @@ class MyExperienceFragment : Fragment() {
     }
 
     private fun subscribeUi() {
-        viewModel.experiencesList?.observe(viewLifecycleOwner, Observer { experiences ->
-            adapter.setExperienceList(experiences)
+        viewModel.articlesList?.observe(viewLifecycleOwner, Observer { articles ->
+            adapter.setArticlesList(articles)
         })
         viewModel.downloadResponseStatus.observe(viewLifecycleOwner, Observer { response ->
             receivedResponse = response
@@ -67,7 +67,7 @@ class MyExperienceFragment : Fragment() {
     }
 
     private fun bindProgressAndEmptyView() {
-        val dataLoaded = (recyclerView.adapter as ExperienceAdapter).itemCount > 0
+        val dataLoaded = (recyclerView.adapter as ArticlesAdapter).itemCount > 0
         val loadingFromServer = receivedResponse == 0
 
         when {

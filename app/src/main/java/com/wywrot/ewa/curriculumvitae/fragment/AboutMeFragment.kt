@@ -10,8 +10,8 @@ import androidx.lifecycle.Observer
 import com.wywrot.ewa.curriculumvitae.R
 import com.wywrot.ewa.curriculumvitae.activity.MainActivity
 import com.wywrot.ewa.curriculumvitae.rest.BaseInfo
-import com.wywrot.ewa.curriculumvitae.viewmodel.Injector
 import com.wywrot.ewa.curriculumvitae.viewmodel.AboutMeViewModel
+import com.wywrot.ewa.curriculumvitae.viewmodel.Injector
 import kotlinx.android.synthetic.main.fragment_about_me.*
 
 class AboutMeFragment : Fragment() {

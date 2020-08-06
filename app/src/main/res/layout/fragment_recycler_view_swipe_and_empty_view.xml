@@ -25,24 +25,25 @@
 
     <TextView
         android:id="@+id/emptyView"
-        android:layout_width="wrap_content"
-        android:drawableTop="@drawable/ic_error_outline_primary_dark_24"
-        android:text="@string/empty_view_message"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableTop="@drawable/ic_error_outline_primary_dark_24"
         android:gravity="center"
+        android:text="@string/empty_view_message"
         android:visibility="gone"
         tools:visibility="visible" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:paddingTop="0dp"
-        android:paddingBottom="0dp"
-        android:minHeight="0dp"
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:scaleY="4"
         android:indeterminate="true"
+        android:minHeight="0dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:scaleY="4"
         android:visibility="gone"
         tools:visibility="visible" />
 </FrameLayout>
